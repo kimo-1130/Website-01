@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <style>
+    .container {
+      box-sizing: border-box;
+      display: flex;
+      align-items: center;
+      width: 660px;
+      height: 300px;
+
+      background-color: rgb(108, 187, 255);
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      overflow: hidden;
+      border-radius: 20px;
+    }
+
+    .previous {
+      width: 45px;
+      height: 45px;
+      background-color: rgb(108, 187, 255);
+      border-radius: 50%;
+      position: absolute;
+      top: 71%;
+      left: 29%;
+    }
+    .next {
+      width: 45px;
+      height: 45px;
+      background-color: rgb(108, 187, 255);
+      border-radius: 50%;
+      position: absolute;
+      top: 71%;
+      left: 33%;
+    }
+
+    .container div {
+      flex-shrink: 0;
+      height: 200px;
+      width: 200px;
+      margin: 0 10px;
+      background-color: white;
+      border-radius: 10px;
+
+      display: flex;
+      justify-content: center;
+      align-items: center;
+
+      font-size: 48px;
+      font-weight: bold;
+      color: rgb(108, 187, 255);
+    }
+  </style>
+  <body>
+    <div class="container">
+      <div>1</div>
+      <div>2</div>
+      <div>3</div>
+      <div>4</div>
+      <div>5</div>
+    </div>
+    <div class="previous"></div>
+    <div class="next"></div>
+
+    <script>
+      let count = 0;
+      document.querySelector(".next").onclick = function () {
+        document.querySelector(".container").scrollBy({
+          left: 220,
+          behavior: "smooth",
+        });
+        count++;
+      };
+      document.querySelector(".previous").onclick = function () {
+        document.querySelector(".container").scrollBy({
+          left: -220,
+          behavior: "smooth",
+        });
+      };
+    </script>
+  </body>
+</html>
